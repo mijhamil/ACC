@@ -1,1 +1,1 @@
-# Astrophotography-Conditions
+# Astrophotography Condition Checker
