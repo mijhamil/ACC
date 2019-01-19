@@ -1,0 +1,28 @@
+{
+  "name": "ACC",
+  "version": "1.0.0",
+  "description": "This web application is to be used to check the weather \r conditions that would affect Astrophotography in any \r specific geographical area that the user selects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mijhamil/ACC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mijhamil/ACC/issues"
+  },
+  "homepage": "https://github.com/mijhamil/ACC#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
