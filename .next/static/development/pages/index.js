@@ -1,5 +1,176 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
+/***/ "./components/ApiCall.js":
+/*!*******************************!*\
+  !*** ./components/ApiCall.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_MyLayout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout.js */ "./components/MyLayout.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+var Index = function Index(props) {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Batman TV Shows"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, props.shows.map(function (_ref) {
+    var show = _ref.show;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: show.id
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      as: "/p/".concat(show.id),
+      href: "/post?id=".concat(show.id)
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", null, show.name)));
+  })));
+};
+
+Index.getInitialProps =
+/*#__PURE__*/
+_asyncToGenerator(
+/*#__PURE__*/
+_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+  var res, data;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default()('https://api.darksky.net/forecast/01b26ee6d0c3282a322bd29fbe30564f/37.334789,-121.888138');
+
+        case 2:
+          res = _context.sent;
+          _context.next = 5;
+          return res.json();
+
+        case 5:
+          data = _context.sent;
+          console.log("Show data fetched. Count: ".concat(data.length));
+          return _context.abrupt("return", {
+            shows: data
+          });
+
+        case 8:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _callee, this);
+}));
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./components/Data.js":
+/*!****************************!*\
+  !*** ./components/Data.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-geolocated */ "./node_modules/react-geolocated/dist-modules/index.js");
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_geolocated__WEBPACK_IMPORTED_MODULE_2__);
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var linkStyle = {
+  marginRight: 15
+};
+
+var Demo =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    var _this;
+
+    _classCallCheck(this, Demo);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Demo).call(this, props));
+    _this.state = {
+      lat: null,
+      long: null
+    };
+    return _this;
+  }
+
+  _createClass(Demo, [{
+    key: "render",
+    value: function render() {
+      return (//   !this.props.isGeolocationAvailable
+        //     ? <div>Your browser does not support Geolocation</div>
+        //     : !this.props.isGeolocationEnabled
+        //       ? <div>Geolocation is not enabled</div>
+        //       : this.props.coords
+        //         ? (
+        //             console.log("hello"),
+        //             !this.state.lat
+        //                 ? this.setState({lat: this.props.coords.latitude, long: this.props.coords.longitude })
+        //                 : console.log("already found location, \n here is lat: " + this.state.lat + "\n here is long: " + this.state.long),
+        //             (<table>
+        //                 <tbody>
+        //                 <tr><td>latitude</td><td>{this.props.coords.latitude}</td></tr>
+        //                 <tr><td>longitude</td><td>{this.props.coords.longitude}</td></tr>
+        //                 </tbody>
+        //             </table>)
+        //             )
+        //         : <div>Getting the location data&hellip; </div>
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "HI")
+      );
+    }
+  }]);
+
+  return Demo;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+Demo.propTypes = Object.assign({}, Demo.propTypes, react_geolocated__WEBPACK_IMPORTED_MODULE_2__["geoPropTypes"]);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_geolocated__WEBPACK_IMPORTED_MODULE_2__["geolocated"])()(Demo));
+
+/***/ }),
+
 /***/ "./components/Header.js":
 /*!******************************!*\
   !*** ./components/Header.js ***!
@@ -74,7 +245,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-var _jsxFileName = "C:\\Work\\Projects\\React\\ACC\\components\\MyLayout.js";
+/* harmony import */ var _Data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Data */ "./components/Data.js");
+/* harmony import */ var _ApiCall__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ApiCall */ "./components/ApiCall.js");
+
+
 
 
 var layoutStyle = {
@@ -85,19 +259,8 @@ var layoutStyle = {
 
 var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: layoutStyle,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }));
+    style: layoutStyle
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Data__WEBPACK_IMPORTED_MODULE_2__["default"], null), props.children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -788,6 +951,18 @@ module.exports = _typeof;
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/regenerator/index.js ***!
   \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4682,6 +4857,33 @@ module.exports = hoistNonReactStatics;
 
 /***/ }),
 
+/***/ "./node_modules/isomorphic-unfetch/browser.js":
+/*!****************************************************!*\
+  !*** ./node_modules/isomorphic-unfetch/browser.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = window.fetch || (window.fetch = __webpack_require__(/*! unfetch */ "./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs").default || __webpack_require__(/*! unfetch */ "./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs"));
+
+
+/***/ }),
+
+/***/ "./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function(e,n){return n=n||{},new Promise(function(t,r){var s=new XMLHttpRequest;for(var o in s.open(n.method||"get",e,!0),n.headers)s.setRequestHeader(o,n.headers[o]);function u(){var e,n=[],t=[],r={};return s.getAllResponseHeaders().replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm,function(s,o,u){n.push(o=o.toLowerCase()),t.push([o,u]),r[o]=(e=r[o])?e+","+u:u}),{ok:2==(s.status/100|0),status:s.status,statusText:s.statusText,url:s.responseURL,clone:u,text:function(){return Promise.resolve(s.responseText)},json:function(){return Promise.resolve(s.responseText).then(JSON.parse)},blob:function(){return Promise.resolve(new Blob([s.response]))},headers:{keys:function(){return n},entries:function(){return t},get:function(e){return r[e.toLowerCase()]},has:function(e){return e.toLowerCase()in r}}}}s.withCredentials="include"==n.credentials,s.onload=function(){t(u())},s.onerror=r,s.send(n.body||null)})});;
+//# sourceMappingURL=unfetch.mjs.map
+
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/lib/EventEmitter.js":
 /*!****************************************************!*\
   !*** ./node_modules/next/dist/lib/EventEmitter.js ***!
@@ -8279,6 +8481,222 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
+/***/ "./node_modules/react-geolocated/dist-modules/components/geolocated.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-geolocated/dist-modules/components/geolocated.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.geoPropTypes = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getDisplayName(WrappedComponent) {
+    return "Geolocated(" + (WrappedComponent.displayName || WrappedComponent.name || "Component") + ")";
+}
+
+var geolocated = function geolocated() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$positionOptions = _ref.positionOptions,
+        positionOptions = _ref$positionOptions === undefined ? {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: Infinity
+    } : _ref$positionOptions,
+        _ref$userDecisionTime = _ref.userDecisionTimeout,
+        userDecisionTimeout = _ref$userDecisionTime === undefined ? null : _ref$userDecisionTime,
+        _ref$suppressLocation = _ref.suppressLocationOnMount,
+        suppressLocationOnMount = _ref$suppressLocation === undefined ? false : _ref$suppressLocation,
+        _ref$watchPosition = _ref.watchPosition,
+        watchPosition = _ref$watchPosition === undefined ? false : _ref$watchPosition,
+        _ref$geolocationProvi = _ref.geolocationProvider,
+        geolocationProvider = _ref$geolocationProvi === undefined ? typeof navigator !== "undefined" && navigator.geolocation : _ref$geolocationProvi;
+
+    return function (WrappedComponent) {
+        var result = function (_Component) {
+            _inherits(Geolocated, _Component);
+
+            function Geolocated(props) {
+                _classCallCheck(this, Geolocated);
+
+                var _this = _possibleConstructorReturn(this, (Geolocated.__proto__ || Object.getPrototypeOf(Geolocated)).call(this, props));
+
+                _this.state = {
+                    coords: null,
+                    isGeolocationAvailable: Boolean(geolocationProvider),
+                    isGeolocationEnabled: true, // be optimistic
+                    positionError: null
+                };
+
+                _this.isCurrentlyMounted = false;
+
+                _this.onPositionError = _this.onPositionError.bind(_this);
+                _this.onPositionSuccess = _this.onPositionSuccess.bind(_this);
+                _this.cancelUserDecisionTimeout = _this.cancelUserDecisionTimeout.bind(_this);
+                _this.getLocation = _this.getLocation.bind(_this);
+                return _this;
+            }
+
+            _createClass(Geolocated, [{
+                key: "cancelUserDecisionTimeout",
+                value: function cancelUserDecisionTimeout() {
+                    if (this.userDecisionTimeoutId) {
+                        clearTimeout(this.userDecisionTimeoutId);
+                    }
+                }
+            }, {
+                key: "onPositionError",
+                value: function onPositionError(positionError) {
+                    this.cancelUserDecisionTimeout();
+                    if (this.isCurrentlyMounted) {
+                        this.setState({
+                            coords: null,
+                            isGeolocationAvailable: this.state.isGeolocationAvailable,
+                            isGeolocationEnabled: false,
+                            positionError: positionError
+                        });
+                    }
+                    if (this.props.onError) {
+                        this.props.onError(positionError);
+                    }
+                }
+            }, {
+                key: "onPositionSuccess",
+                value: function onPositionSuccess(position) {
+                    this.cancelUserDecisionTimeout();
+                    if (this.isCurrentlyMounted) {
+                        this.setState({
+                            coords: position.coords,
+                            isGeolocationAvailable: this.state.isGeolocationAvailable,
+                            isGeolocationEnabled: true,
+                            positionError: null
+                        });
+                    }
+                    if (this.props.onSuccess) {
+                        this.props.onSuccess(position);
+                    }
+                }
+            }, {
+                key: "getLocation",
+                value: function getLocation() {
+                    var _this2 = this;
+
+                    if (!geolocationProvider || !geolocationProvider.getCurrentPosition || !geolocationProvider.watchPosition) {
+                        throw new Error("The provided geolocation provider is invalid");
+                    }
+
+                    var funcPosition = (watchPosition ? geolocationProvider.watchPosition : geolocationProvider.getCurrentPosition).bind(geolocationProvider);
+
+                    if (userDecisionTimeout) {
+                        this.userDecisionTimeoutId = setTimeout(function () {
+                            _this2.onPositionError();
+                        }, userDecisionTimeout);
+                    }
+
+                    this.watchId = funcPosition(this.onPositionSuccess, this.onPositionError, positionOptions);
+                }
+            }, {
+                key: "componentDidMount",
+                value: function componentDidMount() {
+                    this.isCurrentlyMounted = true;
+                    if (!suppressLocationOnMount) {
+                        this.getLocation();
+                    }
+                }
+            }, {
+                key: "componentWillUnmount",
+                value: function componentWillUnmount() {
+                    this.isCurrentlyMounted = false;
+                    this.cancelUserDecisionTimeout();
+                    if (watchPosition) {
+                        geolocationProvider.clearWatch(this.watchId);
+                    }
+                }
+            }, {
+                key: "render",
+                value: function render() {
+                    return _react2.default.createElement(WrappedComponent, _extends({}, this.state, this.props));
+                }
+            }]);
+
+            return Geolocated;
+        }(_react.Component);
+        result.displayName = getDisplayName(WrappedComponent);
+        result.propTypes = {
+            onError: _propTypes2.default.func,
+            onSuccess: _propTypes2.default.func
+        };
+        return result;
+    };
+};
+
+exports.default = geolocated;
+var geoPropTypes = exports.geoPropTypes = {
+    coords: _propTypes2.default.shape({
+        latitude: _propTypes2.default.number,
+        longitude: _propTypes2.default.number,
+        altitude: _propTypes2.default.number,
+        accuracy: _propTypes2.default.number,
+        altitudeAccuracy: _propTypes2.default.number,
+        heading: _propTypes2.default.number,
+        speed: _propTypes2.default.number
+    }),
+    isGeolocationAvailable: _propTypes2.default.bool,
+    isGeolocationEnabled: _propTypes2.default.bool,
+    positionError: _propTypes2.default.shape({
+        code: _propTypes2.default.oneOf([1, 2, 3]),
+        message: _propTypes2.default.string
+    }),
+    watchPosition: _propTypes2.default.bool
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-geolocated/dist-modules/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-geolocated/dist-modules/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _geolocated = __webpack_require__(/*! ./components/geolocated */ "./node_modules/react-geolocated/dist-modules/components/geolocated.js");
+
+var _geolocated2 = _interopRequireDefault(_geolocated);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = { geolocated: _geolocated2.default, geoPropTypes: _geolocated.geoPropTypes };
+
+/***/ }),
+
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
   !*** delegated ./node_modules/react/index.js from dll-reference dll_831a3634f66cb1dada0c ***!
@@ -9930,33 +10348,255 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-var _jsxFileName = "C:\\Work\\Projects\\React\\ACC\\pages\\index.js";
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_MyLayout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/MyLayout.js */ "./components/MyLayout.js");
+/* harmony import */ var _components_ApiCall__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ApiCall */ "./components/ApiCall.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-geolocated */ "./node_modules/react-geolocated/dist-modules/index.js");
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_geolocated__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_Data_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Data.js */ "./components/Data.js");
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, "Hello Next.js"));
-});
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+
+function getPosts() {
+  return [{
+    id: 'hello-nextjs',
+    title: 'Hello Next.js'
+  }, {
+    id: 'learn-nextjs',
+    title: 'Learn Next.js is awesome'
+  }, {
+    id: 'deploy-nextjs',
+    title: 'Deploy apps with ZEIT'
+  }];
+}
+
+var Index = function Index(props) {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Batman TV Shows"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, console.log(props), console.log("tests")));
+};
+/* {props.shows.map(({show}) => (
+  <li key={show.id}>
+    <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+      <a>{show.name}</a>
+    </Link>
+  </li>
+))} */
+
+
+Index.getInitialProps =
+/*#__PURE__*/
+_asyncToGenerator(
+/*#__PURE__*/
+_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+  var latty, longgy, res, data;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          //const res = await fetch('https://api.darksky.net/forecast/01b26ee6d0c3282a322bd29fbe30564f/37.334789,-121.888138')
+          latty = "38.334789";
+          longgy = "-121.888138";
+          _context.next = 4;
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default()('https://api.darksky.net/forecast/01b26ee6d0c3282a322bd29fbe30564f/' + latty + ',' + longgy);
+
+        case 4:
+          res = _context.sent;
+          _context.next = 7;
+          return res.json();
+
+        case 7:
+          data = _context.sent;
+          console.log("Show data fetched. Count: ".concat(data.length));
+          return _context.abrupt("return", {
+            shows: data
+          });
+
+        case 10:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _callee, this);
+}));
+
+function getGeoLoc() {
+  // return !this.props.isGeolocationAvailable
+  // ? <div>Your browser does not support Geolocation</div>
+  // : !this.props.isGeolocationEnabled
+  //   ? <div>Geolocation is not enabled</div>
+  //   : this.props.coords
+  //     ? 
+  //     (<table>
+  //       <tbody>
+  //         <tr><td>latitude</td><td>{this.props.coords.latitude}</td></tr>
+  //         <tr><td>longitude</td><td>{this.props.coords.longitude}</td></tr>
+  //         <tr><td>altitude</td><td>{this.props.coords.altitude}</td></tr>
+  //         <tr><td>heading</td><td>{this.props.coords.heading}</td></tr>
+  //         <tr><td>speed</td><td>{this.props.coords.speed}</td></tr>
+  //       </tbody>
+  //     </table>, console.log("the latty is " + props.coords.latitude))
+  //     : <div>Getting the location data&hellip; </div>
+  if (!this.props.isGeolocationAvailable) {
+    console.log("not available");
+  } else {
+    console.log("available");
+  }
+}
+
+getGeoLoc.propTypes = Object.assign({}, getGeoLoc.propTypes, react_geolocated__WEBPACK_IMPORTED_MODULE_6__["geoPropTypes"]);
+/* if ("geolocation" in navigator) {
+  // check if geolocation is supported/enabled on current browser
+  navigator.geolocation.getCurrentPosition(
+   function success(position) {
+     // for when getting location is a success
+     console.log('latitude', position.coords.latitude, 
+                 'longitude', position.coords.longitude);
+   },
+  function error(error_message) {
+    // for when getting location results in an error
+    console.error('An error has occured while retrieving location', error_message)
+  }  
+  );
+} else {
+  // geolocation is not supported
+  // get your location some other way
+  console.log('geolocation is not enabled on this browser')
+} */
+
+/*
+const PostLink = ({ post }) => (
+  <li>
+    <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
+      <a>{post.title}</a>
+    </Link>
+  </li>
+)
+
+export default () => (
+  <Layout>
+    <h1>My Blog</h1>
+    <ul>
+      {getPosts().map((post) => (<PostLink key={post.id} post={post}/>))}
+    </ul>
+  </Layout>
+)
+*/
+
+var Demo =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Demo);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Demo)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getInitialProps",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var latty, longgy, res, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              //const res = await fetch('https://api.darksky.net/forecast/01b26ee6d0c3282a322bd29fbe30564f/37.334789,-121.888138')
+              latty = "38.334789";
+              longgy = "-121.888138";
+              _context2.next = 4;
+              return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default()('https://api.darksky.net/forecast/01b26ee6d0c3282a322bd29fbe30564f/' + latty + ',' + longgy);
+
+            case 4:
+              res = _context2.sent;
+              _context2.next = 7;
+              return res.json();
+
+            case 7:
+              data = _context2.sent;
+              console.log("Show data fetched. Count: ".concat(data.length));
+              return _context2.abrupt("return", {
+                shows: data
+              });
+
+            case 10:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, this);
+    })));
+
+    return _this;
+  }
+
+  _createClass(Demo, [{
+    key: "render",
+    value: function render() {
+      return !this.props.isGeolocationAvailable ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Your browser does not support Geolocation") : !this.props.isGeolocationEnabled ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Geolocation is not enabled") : this.props.coords ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "latitude"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.latitude)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "longitude"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.longitude)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "altitude"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.altitude)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "heading"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.heading)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, "speed"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, this.props.coords.speed)))) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "Getting the location data\u2026 ");
+    }
+  }]);
+
+  return Demo;
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component); // Demo.propTypes = Object.assign({}, Demo.propTypes, geoPropTypes);
+// export default geolocated()(Demo)
+// ;
+// export default () => (
+//   <div>
+//     <p>Hello Next.js</p>
+//     <Index />
+//   </div>
+// )
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
