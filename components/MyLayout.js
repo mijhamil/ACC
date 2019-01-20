@@ -1,4 +1,6 @@
 import Header from './Header'
+import Data from './Data'
+import ApiCall from './ApiCall'
 
 const layoutStyle = {
   margin: 20,
@@ -9,6 +11,9 @@ const layoutStyle = {
 const Layout = (props) => (
   <div style={layoutStyle}>
     <Header />
+    <Data />
+    
+    {props.children}
   </div>
 )
 
