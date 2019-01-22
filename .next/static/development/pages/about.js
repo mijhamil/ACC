@@ -1,4 +1,199 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\about.js"],{
+
+/***/ "./components/ApiCall.js":
+/*!*******************************!*\
+  !*** ./components/ApiCall.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_MyLayout_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MyLayout.js */ "./components/MyLayout.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+ // const Index = (props) => (
+//    <div>
+//     <h1>Batman TV Shows</h1>
+//     <ul>
+//       {props.shows.map(({show}) => (
+//         <li key={show.id}>
+//           <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+//             <a>{show.name}</a>
+//           </Link>
+//         </li>
+//       ))}
+//     </ul>
+//     </div>
+//   )
+// Index.getInitialProps = async function() {
+//     const res = await fetch('https://api.darksky.net/forecast/***REMOVED***/37.334789,-121.888138')
+//   //  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
+//     const data = await res.json()
+//     console.log(`Show data fetched. Count: ${data.length}`)
+//     return {
+//       shows: data
+//     }
+//   }
+//   export default Index
+
+var ApiCall =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ApiCall, _React$Component);
+
+  function ApiCall() {
+    var _this;
+
+    _classCallCheck(this, ApiCall);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ApiCall).call(this));
+    _this.state = {
+      dats: []
+    };
+    return _this;
+  }
+
+  _createClass(ApiCall, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()('https://api.darksky.net/forecast/***REMOVED***/37.334789,-121.888138').then(function (results) {
+        return results.json();
+      }).then(function (data) {
+        var pictures = data.results;
+      });
+      console.log(data);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h1", null, "hi2");
+    }
+  }]);
+
+  return ApiCall;
+}(react__WEBPACK_IMPORTED_MODULE_3___default.a.Component);
+
+/***/ }),
+
+/***/ "./components/Data.js":
+/*!****************************!*\
+  !*** ./components/Data.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-geolocated */ "./node_modules/react-geolocated/dist-modules/index.js");
+/* harmony import */ var react_geolocated__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_geolocated__WEBPACK_IMPORTED_MODULE_2__);
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var linkStyle = {
+  marginRight: 15
+};
+
+var Demo =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    var _this;
+
+    _classCallCheck(this, Demo);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Demo).call(this, props));
+    _this.state = {
+      lat: null,
+      long: null
+    };
+    return _this;
+  }
+
+  _createClass(Demo, [{
+    key: "render",
+    value: function render() {
+      return (//   !this.props.isGeolocationAvailable
+        //     ? <div>Your browser does not support Geolocation</div>
+        //     : !this.props.isGeolocationEnabled
+        //       ? <div>Geolocation is not enabled</div>
+        //       : this.props.coords
+        //         ? (
+        //             console.log("hello"),
+        //             !this.state.lat
+        //                 ? this.setState({lat: this.props.coords.latitude, long: this.props.coords.longitude })
+        //                 : console.log("already found location, \n here is lat: " + this.state.lat + "\n here is long: " + this.state.long),
+        //             (<table>
+        //                 <tbody>
+        //                 <tr><td>latitude</td><td>{this.props.coords.latitude}</td></tr>
+        //                 <tr><td>longitude</td><td>{this.props.coords.longitude}</td></tr>
+        //                 </tbody>
+        //             </table>)
+        //             )
+        //         : <div>Getting the location data&hellip; </div>
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "HI")
+      );
+    }
+  }]);
+
+  return Demo;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+Demo.propTypes = Object.assign({}, Demo.propTypes, react_geolocated__WEBPACK_IMPORTED_MODULE_2__["geoPropTypes"]);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_geolocated__WEBPACK_IMPORTED_MODULE_2__["geolocated"])()(Demo));
+
+/***/ }),
 
 /***/ "./components/Header.js":
 /*!******************************!*\
@@ -59,6 +254,40 @@ var Header = function Header() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/MyLayout.js":
+/*!********************************!*\
+  !*** ./components/MyLayout.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _Data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Data */ "./components/Data.js");
+/* harmony import */ var _ApiCall__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ApiCall */ "./components/ApiCall.js");
+
+
+
+
+var layoutStyle = {
+  margin: 20,
+  padding: 20,
+  border: '1px solid #DDD'
+};
+
+var Layout = function Layout(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: layoutStyle
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Data__WEBPACK_IMPORTED_MODULE_2__["default"], null), props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
 
 /***/ }),
 
@@ -4640,6 +4869,33 @@ module.exports = hoistNonReactStatics;
 
 /***/ }),
 
+/***/ "./node_modules/isomorphic-unfetch/browser.js":
+/*!****************************************************!*\
+  !*** ./node_modules/isomorphic-unfetch/browser.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = window.fetch || (window.fetch = __webpack_require__(/*! unfetch */ "./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs").default || __webpack_require__(/*! unfetch */ "./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs"));
+
+
+/***/ }),
+
+/***/ "./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/isomorphic-unfetch/node_modules/unfetch/dist/unfetch.mjs ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function(e,n){return n=n||{},new Promise(function(t,r){var s=new XMLHttpRequest;for(var o in s.open(n.method||"get",e,!0),n.headers)s.setRequestHeader(o,n.headers[o]);function u(){var e,n=[],t=[],r={};return s.getAllResponseHeaders().replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm,function(s,o,u){n.push(o=o.toLowerCase()),t.push([o,u]),r[o]=(e=r[o])?e+","+u:u}),{ok:2==(s.status/100|0),status:s.status,statusText:s.statusText,url:s.responseURL,clone:u,text:function(){return Promise.resolve(s.responseText)},json:function(){return Promise.resolve(s.responseText).then(JSON.parse)},blob:function(){return Promise.resolve(new Blob([s.response]))},headers:{keys:function(){return n},entries:function(){return t},get:function(e){return r[e.toLowerCase()]},has:function(e){return e.toLowerCase()in r}}}}s.withCredentials="include"==n.credentials,s.onload=function(){t(u())},s.onerror=r,s.send(n.body||null)})});;
+//# sourceMappingURL=unfetch.mjs.map
+
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/lib/EventEmitter.js":
 /*!****************************************************!*\
   !*** ./node_modules/next/dist/lib/EventEmitter.js ***!
@@ -8237,6 +8493,222 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
+/***/ "./node_modules/react-geolocated/dist-modules/components/geolocated.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-geolocated/dist-modules/components/geolocated.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.geoPropTypes = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getDisplayName(WrappedComponent) {
+    return "Geolocated(" + (WrappedComponent.displayName || WrappedComponent.name || "Component") + ")";
+}
+
+var geolocated = function geolocated() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref$positionOptions = _ref.positionOptions,
+        positionOptions = _ref$positionOptions === undefined ? {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: Infinity
+    } : _ref$positionOptions,
+        _ref$userDecisionTime = _ref.userDecisionTimeout,
+        userDecisionTimeout = _ref$userDecisionTime === undefined ? null : _ref$userDecisionTime,
+        _ref$suppressLocation = _ref.suppressLocationOnMount,
+        suppressLocationOnMount = _ref$suppressLocation === undefined ? false : _ref$suppressLocation,
+        _ref$watchPosition = _ref.watchPosition,
+        watchPosition = _ref$watchPosition === undefined ? false : _ref$watchPosition,
+        _ref$geolocationProvi = _ref.geolocationProvider,
+        geolocationProvider = _ref$geolocationProvi === undefined ? typeof navigator !== "undefined" && navigator.geolocation : _ref$geolocationProvi;
+
+    return function (WrappedComponent) {
+        var result = function (_Component) {
+            _inherits(Geolocated, _Component);
+
+            function Geolocated(props) {
+                _classCallCheck(this, Geolocated);
+
+                var _this = _possibleConstructorReturn(this, (Geolocated.__proto__ || Object.getPrototypeOf(Geolocated)).call(this, props));
+
+                _this.state = {
+                    coords: null,
+                    isGeolocationAvailable: Boolean(geolocationProvider),
+                    isGeolocationEnabled: true, // be optimistic
+                    positionError: null
+                };
+
+                _this.isCurrentlyMounted = false;
+
+                _this.onPositionError = _this.onPositionError.bind(_this);
+                _this.onPositionSuccess = _this.onPositionSuccess.bind(_this);
+                _this.cancelUserDecisionTimeout = _this.cancelUserDecisionTimeout.bind(_this);
+                _this.getLocation = _this.getLocation.bind(_this);
+                return _this;
+            }
+
+            _createClass(Geolocated, [{
+                key: "cancelUserDecisionTimeout",
+                value: function cancelUserDecisionTimeout() {
+                    if (this.userDecisionTimeoutId) {
+                        clearTimeout(this.userDecisionTimeoutId);
+                    }
+                }
+            }, {
+                key: "onPositionError",
+                value: function onPositionError(positionError) {
+                    this.cancelUserDecisionTimeout();
+                    if (this.isCurrentlyMounted) {
+                        this.setState({
+                            coords: null,
+                            isGeolocationAvailable: this.state.isGeolocationAvailable,
+                            isGeolocationEnabled: false,
+                            positionError: positionError
+                        });
+                    }
+                    if (this.props.onError) {
+                        this.props.onError(positionError);
+                    }
+                }
+            }, {
+                key: "onPositionSuccess",
+                value: function onPositionSuccess(position) {
+                    this.cancelUserDecisionTimeout();
+                    if (this.isCurrentlyMounted) {
+                        this.setState({
+                            coords: position.coords,
+                            isGeolocationAvailable: this.state.isGeolocationAvailable,
+                            isGeolocationEnabled: true,
+                            positionError: null
+                        });
+                    }
+                    if (this.props.onSuccess) {
+                        this.props.onSuccess(position);
+                    }
+                }
+            }, {
+                key: "getLocation",
+                value: function getLocation() {
+                    var _this2 = this;
+
+                    if (!geolocationProvider || !geolocationProvider.getCurrentPosition || !geolocationProvider.watchPosition) {
+                        throw new Error("The provided geolocation provider is invalid");
+                    }
+
+                    var funcPosition = (watchPosition ? geolocationProvider.watchPosition : geolocationProvider.getCurrentPosition).bind(geolocationProvider);
+
+                    if (userDecisionTimeout) {
+                        this.userDecisionTimeoutId = setTimeout(function () {
+                            _this2.onPositionError();
+                        }, userDecisionTimeout);
+                    }
+
+                    this.watchId = funcPosition(this.onPositionSuccess, this.onPositionError, positionOptions);
+                }
+            }, {
+                key: "componentDidMount",
+                value: function componentDidMount() {
+                    this.isCurrentlyMounted = true;
+                    if (!suppressLocationOnMount) {
+                        this.getLocation();
+                    }
+                }
+            }, {
+                key: "componentWillUnmount",
+                value: function componentWillUnmount() {
+                    this.isCurrentlyMounted = false;
+                    this.cancelUserDecisionTimeout();
+                    if (watchPosition) {
+                        geolocationProvider.clearWatch(this.watchId);
+                    }
+                }
+            }, {
+                key: "render",
+                value: function render() {
+                    return _react2.default.createElement(WrappedComponent, _extends({}, this.state, this.props));
+                }
+            }]);
+
+            return Geolocated;
+        }(_react.Component);
+        result.displayName = getDisplayName(WrappedComponent);
+        result.propTypes = {
+            onError: _propTypes2.default.func,
+            onSuccess: _propTypes2.default.func
+        };
+        return result;
+    };
+};
+
+exports.default = geolocated;
+var geoPropTypes = exports.geoPropTypes = {
+    coords: _propTypes2.default.shape({
+        latitude: _propTypes2.default.number,
+        longitude: _propTypes2.default.number,
+        altitude: _propTypes2.default.number,
+        accuracy: _propTypes2.default.number,
+        altitudeAccuracy: _propTypes2.default.number,
+        heading: _propTypes2.default.number,
+        speed: _propTypes2.default.number
+    }),
+    isGeolocationAvailable: _propTypes2.default.bool,
+    isGeolocationEnabled: _propTypes2.default.bool,
+    positionError: _propTypes2.default.shape({
+        code: _propTypes2.default.oneOf([1, 2, 3]),
+        message: _propTypes2.default.string
+    }),
+    watchPosition: _propTypes2.default.bool
+};
+
+/***/ }),
+
+/***/ "./node_modules/react-geolocated/dist-modules/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-geolocated/dist-modules/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _geolocated = __webpack_require__(/*! ./components/geolocated */ "./node_modules/react-geolocated/dist-modules/components/geolocated.js");
+
+var _geolocated2 = _interopRequireDefault(_geolocated);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = { geolocated: _geolocated2.default, geoPropTypes: _geolocated.geoPropTypes };
+
+/***/ }),
+
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
   !*** delegated ./node_modules/react/index.js from dll-reference dll_831a3634f66cb1dada0c ***!
@@ -9879,9 +10351,9 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
+/***/ "./pages/about.js":
 /*!************************!*\
-  !*** ./pages/index.js ***!
+  !*** ./pages/about.js ***!
   \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -9890,78 +10362,31 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header.js */ "./components/Header.js");
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+var _jsxFileName = "C:\\Work\\Projects\\React\\ACC\\pages\\about.js";
 
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var Clock =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Clock, _React$Component);
-
-  function Clock(props) {
-    var _this;
-
-    _classCallCheck(this, Clock);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Clock).call(this, props));
-    _this.state = {
-      date: new Date()
-    };
-    return _this;
-  }
-
-  _createClass(Clock, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this.timerID = setInterval(function () {
-        return _this2.tick();
-      }, 1000);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      clearInterval(this.timerID);
-    }
-  }, {
-    key: "tick",
-    value: function tick() {
-      this.setState({
-        date: new Date()
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header_js__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello, world!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It is ", this.state.date.toLocaleTimeString(), "."));
-    }
-  }]);
-
-  return Clock;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Clock);
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, "This is the about page"));
+});
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -9978,21 +10403,21 @@ function (_React$Component) {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/about")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
-  !*** multi ./pages/index.js ***!
+  !*** multi ./pages/about.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__NEXT_REGISTER_PAGE('/', function() {
-module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
+__NEXT_REGISTER_PAGE('/about', function() {
+module.exports = __webpack_require__(/*! ./pages/about.js */"./pages/about.js");
 
 return { page: module.exports.default }});
 
@@ -10009,5 +10434,5 @@ module.exports = dll_831a3634f66cb1dada0c;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
-//# sourceMappingURL=index.js.map
+},[[4,"static/runtime/webpack.js"]]]));;
+//# sourceMappingURL=about.js.map
