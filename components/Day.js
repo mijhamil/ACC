@@ -8,7 +8,6 @@ class Day extends React.Component{
         let children = []
         for (var property in this.props.data) {
             if (this.props.data.hasOwnProperty(property)) {
-              // Do things here
               children.push(
               <p> {property} = {this.props.data[property]}</p>
 
