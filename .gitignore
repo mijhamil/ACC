@@ -1,1 +1,9 @@
+#Dependencies
 node_modules
+.next/static/webpack
+
+#Personal
+Todo
+
+#Api Key
+config.js
