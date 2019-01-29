@@ -10,7 +10,7 @@ given to determine if the night is good for astrophotography.
 
 # How to run
 1. Git clone the repository
-2. run 'npm install' inside repo
+2. Run 'npm install' inside repo
 3. Create account at https://darksky.net/dev for API key
 4. Create file 'config.js' in root of project with the following code
   ```
@@ -19,4 +19,4 @@ given to determine if the night is good for astrophotography.
   ```
 
 
-5. run 'npm run dev'
+5. Run 'npm run dev'
