@@ -142,7 +142,6 @@ function (_React$Component) {
 
       for (var property in this.props.data) {
         if (this.props.data.hasOwnProperty(property)) {
-          // Do things here
           children.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", property, " = ", this.props.data[property]));
         }
       }
@@ -163,6 +162,20 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./config.js":
+/*!*******************!*\
+  !*** ./config.js ***!
+  \*******************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var API_KEY = "01b26ee6d0c3282a322bd29fbe30564f";
+/* harmony default export */ __webpack_exports__["default"] = (API_KEY);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -175,6 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Day__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Day */ "./components/Day.js");
+/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../config.js */ "./config.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -194,6 +208,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 
 
 
@@ -229,7 +244,7 @@ function (_React$Component) {
     value: function getApi(lat, long) {
       var _this2 = this;
 
-      fetch("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + "01b26ee6d0c3282a322bd29fbe30564f/".concat(lat, ",").concat(long)).then(function (res) {
+      fetch("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + _config_js__WEBPACK_IMPORTED_MODULE_2__["default"] + "/".concat(lat, ",").concat(long)).then(function (res) {
         return res.json();
       }).then(function (result) {
         _this2.setState({

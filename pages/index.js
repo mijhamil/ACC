@@ -1,4 +1,6 @@
 import Day from '../components/Day'
+import API_KEY from '../config.js'
+
 
 class Conditions extends React.Component {
   constructor(props) {
@@ -13,13 +15,14 @@ class Conditions extends React.Component {
     this.setPosition = this.setPosition.bind(this)
   }
 
+
   /**
    * getApi fetches weather data from Dark Sky Api based on the latitude and
    * longitude given from built in geo location called in setLocation()
    */  
   getApi(lat, long) {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/`
-    + `01b26ee6d0c3282a322bd29fbe30564f/${lat},${long}`)
+    + API_KEY + `/${lat},${long}`)
     .then(res => res.json())
     .then((result) => {
         this.setState({
