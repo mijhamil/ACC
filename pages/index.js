@@ -1,5 +1,3 @@
-import { get } from "https";
-
 class Conditions extends React.Component {
   constructor(props) {
     super(props);
@@ -11,22 +9,21 @@ class Conditions extends React.Component {
       longitude: null
     };
     this.setPosition = this.setPosition.bind(this)
-    
   }
 
+  /**
+   * getApi fetches weather data from Dark Sky Api based on the latitude and
+   * longitude given from built in geo location called in setLocation()
+   */  
   getApi(lat, long) {
-    console.log("getApi Called")
-    console.log(lat, long)
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/***REMOVED***/${lat},${long}`, { headers: {
-      'Access-Control-Allow-Origin':'*'
-    }})
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/`
+    + `***REMOVED***/${lat},${long}`)
     .then(res => res.json())
     .then((result) => {
         this.setState({
           isLoaded: true,
           dats: result
         });
-        
       },
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
@@ -39,6 +36,12 @@ class Conditions extends React.Component {
       }
     )
   }
+
+  /**
+   * setPosition takes in a position parameter from navigator and
+   * updates Conditions state.
+   * getApi is then called with the latitude/longitude passed in
+   */
   setPosition(position){
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
@@ -46,22 +49,15 @@ class Conditions extends React.Component {
     this.getApi(lat, long)
   }
 
-
   componentDidMount() {
     
-    
-
     if (!navigator.geolocation){
       this.setState({statusText: 'Your browser does not support geolocation...'});
     }
     else{
+        // Passes position to setPosition function
         navigator.geolocation.getCurrentPosition(this.setPosition, this.errorPosition);
-
     }
-    //this.getApi();
-  }
-
-  componentWillUnmount() {
   }
 
   render() {
@@ -86,5 +82,3 @@ class Conditions extends React.Component {
   }
 }
 export default Conditions;
-
-
