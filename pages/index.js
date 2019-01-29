@@ -1,10 +1,12 @@
+import Day from '../components/Day'
+
 class Conditions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      dats: [],
+      dataObject: [],
       latitude: null,
       longitude: null
     };
@@ -22,7 +24,7 @@ class Conditions extends React.Component {
     .then((result) => {
         this.setState({
           isLoaded: true,
-          dats: result
+          dataObject: result
         });
       },
       // Note: it's important to handle errors here
@@ -55,7 +57,7 @@ class Conditions extends React.Component {
       this.setState({statusText: 'Your browser does not support geolocation...'});
     }
     else{
-        // Passes position to setPosition function
+        // Passes position and calls setPosition function
         navigator.geolocation.getCurrentPosition(this.setPosition, this.errorPosition);
     }
   }
@@ -71,11 +73,15 @@ class Conditions extends React.Component {
     } else {
       return (
        <div>
-       <p>The Latitude is {JSON.stringify(this.state.dats.latitude, null, 2)}.</p>
-       <p>The Longitude is {JSON.stringify(this.state.dats.longitude, null, 2)}.</p>
-       <p>The Time Zone is is {JSON.stringify(this.state.dats.timezone, null, 2)}.</p>
-       <p>The Current Temperature is {JSON.stringify(this.state.dats.currently.temperature, null, 2)}.</p>
-       
+       <p>The Latitude is {JSON.stringify(this.state.dataObject.latitude, null, 2)}.</p>
+       <p>The Longitude is {JSON.stringify(this.state.dataObject.longitude, null, 2)}.</p>
+       <p>The Current Temperature is {JSON.stringify(this.state.dataObject.currently.temperature, null, 2)}.</p>
+       <h2>5 day forcast data </h2>
+       <Day data={this.state.dataObject.daily.data[0]} day={'1'}/>
+       <Day data={this.state.dataObject.daily.data[1]} day={'2'}/>
+       <Day data={this.state.dataObject.daily.data[2]} day={'3'}/>
+       <Day data={this.state.dataObject.daily.data[3]} day={'4'}/>
+       <Day data={this.state.dataObject.daily.data[4]} day={'5'}/>
        </div>
       );
     }
