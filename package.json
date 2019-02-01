@@ -4,7 +4,7 @@
   "description": "This web application is to be used to check the weather \r conditions that would affect Astrophotography in any \r specific geographical area that the user selects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "node server.js",
     "build": "next build",
     "start": "next start"
@@ -28,5 +28,8 @@
     "react-dom": "^16.7.0",
     "react-geolocated": "^2.4.0",
     "react-markdown": "^4.0.6"
+  },
+  "devDependencies": {
+    "jest": "^24.0.0"
   }
 }

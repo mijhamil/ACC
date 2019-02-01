@@ -136,6 +136,14 @@ function (_React$Component) {
   }
 
   _createClass(Day, [{
+    key: "calculateData",
+    value: function calculateData() {
+      var score = 100; // console.log(this.props.data[this.props.day])
+
+      score = score * (1 - this.props.data['cloudCover']);
+      console.log("the Score is " + score);
+    }
+  }, {
     key: "renderData",
     value: function renderData() {
       var children = [];
@@ -151,7 +159,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Day = ", this.props.day), this.renderData());
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Day = ", this.props.day), this.renderData(), this.calculateData());
     }
   }]);
 
