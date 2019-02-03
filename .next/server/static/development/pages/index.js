@@ -124,6 +124,22 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var dayStyle = {
+  margin: '40px',
+  padding: '10px',
+  border: '2px solid',
+  borderRadius: '15px',
+  display: 'inline-block' // const dayText = {
+  //   margin: '40px',
+  //   padding: '10px',
+  //   border: '2px solid',
+  //   borderRadius: '15px',
+  //   display: 'inline-block',
+  //   color: {calculateColor()}
+  // }
+
+};
+
 var Day =
 /*#__PURE__*/
 function (_React$Component) {
@@ -136,12 +152,20 @@ function (_React$Component) {
   }
 
   _createClass(Day, [{
+    key: "calculateColor",
+    value: function calculateColor() {
+      var colorScore = this.calculateData();
+      colorScore = colorScore / 100 * 255;
+      return "rgb(" + (100 - colorScore) + "," + colorScore + ",0)";
+    }
+  }, {
     key: "calculateData",
     value: function calculateData() {
       var score = 100; // console.log(this.props.data[this.props.day])
 
       score = score * (1 - this.props.data['cloudCover']);
       console.log("the Score is " + score);
+      return score.toFixed(0);
     }
   }, {
     key: "renderData",
@@ -157,9 +181,22 @@ function (_React$Component) {
       return children;
     }
   }, {
+    key: "displayDate",
+    value: function displayDate() {
+      var d = new Date(parseInt(this.props.data.time.toString() + "000")); // d = d.split(' ')[0]
+
+      return d.toDateString();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Day = ", this.props.day), this.renderData(), this.calculateData());
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: dayStyle
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Day = ", this.props.day), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.displayDate()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        style: {
+          color: this.calculateColor()
+        }
+      }, "Score: ", this.calculateData()));
     }
   }]);
 
@@ -311,7 +348,11 @@ function (_React$Component) {
       } else if (!isLoaded) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Loading..."));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The Latitude is ", JSON.stringify(this.state.dataObject.latitude, null, 2), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The Longitude is ", JSON.stringify(this.state.dataObject.longitude, null, 2), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The Current Temperature is ", JSON.stringify(this.state.dataObject.currently.temperature, null, 2), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "5 day forcast data "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Day__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: mainDiv
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: dayDiv
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Day__WEBPACK_IMPORTED_MODULE_1__["default"], {
           data: this.state.dataObject.daily.data[0],
           day: '1'
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Day__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -326,7 +367,7 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Day__WEBPACK_IMPORTED_MODULE_1__["default"], {
           data: this.state.dataObject.daily.data[4],
           day: '5'
-        }));
+        })));
       }
     }
   }]);
@@ -334,6 +375,30 @@ function (_React$Component) {
   return Conditions;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
+var dayDiv = {
+  // display: 'inline-block',
+  // top: '50%',
+  // left: '50%',
+  // 'margin-left': '-400px',
+  // 'margin-top': '-250px',
+  // width: '800px',
+  // height: '300px',
+  // border: '2px solid'
+  width: '80%',
+  margin: '0 auto'
+};
+var mainDiv = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  'margin-left': '-600px',
+  'margin-top': '-250px',
+  width: '1200px',
+  height: '500px',
+  border: '2px solid',
+  borderRadius: '25px',
+  backgroundColor: 'grey'
+};
 /* harmony default export */ __webpack_exports__["default"] = (Conditions);
 
 /***/ }),

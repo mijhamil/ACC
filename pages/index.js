@@ -2,6 +2,8 @@ import Day from '../components/Day'
 import API_KEY from '../config.js'
 
 
+
+
 class Conditions extends React.Component {
   constructor(props) {
     super(props);
@@ -75,19 +77,48 @@ class Conditions extends React.Component {
       </div>);
     } else {
       return (
-       <div>
-       <p>The Latitude is {JSON.stringify(this.state.dataObject.latitude, null, 2)}.</p>
-       <p>The Longitude is {JSON.stringify(this.state.dataObject.longitude, null, 2)}.</p>
-       <p>The Current Temperature is {JSON.stringify(this.state.dataObject.currently.temperature, null, 2)}.</p>
-       <h2>5 day forcast data </h2>
-       <Day data={this.state.dataObject.daily.data[0]} day={'1'}/>
-       <Day data={this.state.dataObject.daily.data[1]} day={'2'}/>
-       <Day data={this.state.dataObject.daily.data[2]} day={'3'}/>
-       <Day data={this.state.dataObject.daily.data[3]} day={'4'}/>
-       <Day data={this.state.dataObject.daily.data[4]} day={'5'}/>
+        <div style={mainDiv}>
+    
+       {/* <p>The Latitude is {JSON.stringify(this.state.dataObject.latitude, null, 2)}.</p> */}
+
+        <div style={dayDiv}>
+        <Day data={this.state.dataObject.daily.data[0]} day={'1'}/>
+        <Day data={this.state.dataObject.daily.data[1]} day={'2'}/>
+        <Day data={this.state.dataObject.daily.data[2]} day={'3'}/>
+        <Day data={this.state.dataObject.daily.data[3]} day={'4'}/>
+        <Day data={this.state.dataObject.daily.data[4]} day={'5'}/>
+        </div>
+       
        </div>
       );
     }
   }
 }
+
+const dayDiv = {
+  // display: 'inline-block',
+  // top: '50%',
+  // left: '50%',
+  // 'margin-left': '-400px',
+  // 'margin-top': '-250px',
+  // width: '800px',
+  // height: '300px',
+  // border: '2px solid'
+  width: '80%',
+  margin: '0 auto'
+  
+}
+const mainDiv = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  'margin-left': '-600px',
+  'margin-top': '-250px',
+  width: '1200px',
+  height: '500px',
+  border: '2px solid',
+  borderRadius: '25px',
+  backgroundColor: 'grey'
+}
+
 export default Conditions;
